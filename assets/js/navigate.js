@@ -9,3 +9,7 @@ $('#daily-word').click(() => {
 $('#rapid-fire').click(() => {
     location.href = 'rapidfire.html';
 })
+
+$('#home').click(() => {
+    location.href = 'index.html';
+})

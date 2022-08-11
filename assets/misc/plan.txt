@@ -1,10 +1,19 @@
 future plans
+todo:
+impliment state logic to prevent skipping a word
+begin rapid fire page
 
 game modes:
  -- daily word: user will have 10 attempts to guess all letters in the daily word. a win streak will be recorded
-    -- to make sure user doesnt refresh to start over, each letter that was entered will be stored in local storage.
+    -- to make sure user doesn't refresh to start over, each letter that was entered will be stored in local storage.
     -- if a user refreshes, the script will check for all letters that have been entered.
-    -- letters that match the word will be highlighted green and disabled, and letters that arent apart of the word will be disabled.
+    -- letters that match the word will be highlighted green and disabled, and letters that aren't a part of the word will be disabled.
     -- guesses remaining will be stored in local storage.
- -- rapid fire: user will have 1 minute to guess a word with only 10 total attempts. a win streak will be recorded
+ -- rapid fire: user will have 2 minutes to guess as many words as possible, with 10 attempts each word. high score will be recorded.
  -- casual: a user will have unlimited time to guess a word with only 10 total attempts. a win streak will be recorded.
+
+ game state
+ -- if there is no word stored in local storage, fetch new word and begin new game
+ -- as user enters guesses, each guess will be stored in local storage (letters)
+ -- if user refreshes, game will check for word in local storage, check all letters entered, replace underscores with matching letters, and buttions will be disabled accordingly
+ -- guesses remaining will also be fetched from local storage if word is located
