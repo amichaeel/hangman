@@ -69,6 +69,7 @@ $(".letters").click((event) => {
 
     /** Winning logic */
     if (underscores.join("") == chosenWord.join("")) {
+        lockKeys();
         updateStats(true);
         $('#win').text('You win!');
         $('#restart').text('*Restarting*')
@@ -83,6 +84,7 @@ $(".letters").click((event) => {
 
     /** Loss logic */
     if (guessesLeft == 0) {
+        lockKeys();
         updateStats(false);
         $('#reveal').text('The word was: ' + chosenWord.join("") + '.');
         $('#lose').fadeIn().text('You lose.');
@@ -162,6 +164,13 @@ $("#reset").click(() => {
     updateStats(false);
     refresh(false)
 });
+
+const lockKeys = () => {
+    $('button').each((index) => {
+        const letterID = `#letter${index+1}`
+        $(`${letterID}`).attr("disabled", true);
+    })
+}
 
 
 /** Refresh casual stats */
