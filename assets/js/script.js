@@ -60,8 +60,6 @@ $(".letters").click((event) => {
         updateStats(true);
         $('#win').text('You win!');
         $('#restart').text('*Restarting*')
-        wins++
-        $("#wins").text(`Wins: ${wins}`)
         setTimeout(() => {
             refresh(true);
         }, 2000);
@@ -129,8 +127,8 @@ const updateStats = (won) => {
         $('#losses').text(`Losses: ${localStorage.getItem("losses")}`)
     } else {
         const winsVal = (parseInt(localStorage.getItem("wins"))+1);
-        localStorage.setItem("losses", winsVal.toString());
-        $('#wins').text(`Losses: ${localStorage.getItem("wins")}`)
+        localStorage.setItem("wins", winsVal.toString());
+        $('#wins').text(`Wins: ${localStorage.getItem("wins")}`)
     }
 }
 
