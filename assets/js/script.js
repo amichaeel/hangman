@@ -27,6 +27,7 @@ $('#guess').text(guessesLeft);
 $('#reset-stats').click(() => {
     refreshStats();
 })
+
 /** Hangman game logic */
 $(".letters").click((event) => {
     let key = event.target.innerText.toLowerCase();
