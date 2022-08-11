@@ -9,15 +9,12 @@ $("#wins").text(`Wins: ${localStorage.getItem("wins")}`)
 $("#losses").text(`Losses: ${localStorage.getItem("losses")}`)
 
 const displayLoading = () => {
-    $("#spinner").removeClass("hide");
-    $("#spinner").addClass("display");
+    $("#spinner").show()
 }
 
 const hideLoading = () => {
-    $("#spinner").removeClass("display");
-    $("#spinner").addClass("hide");
+    $("#spinner").hide();
 }
-
 
 /** Generate word and create word array */
 let word = "";
