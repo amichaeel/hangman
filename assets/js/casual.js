@@ -1,9 +1,9 @@
 /** User stats */
 if (!localStorage.getItem("win-streak")) {
     let wins = localStorage.setItem("win-streak", 0);
-    $("#win-streak").text(`Wins Streak: ${localStorage.getItem("win-streak")}`)
+    $("#win-streak").text(`Win Streak: ${localStorage.getItem("win-streak")}`)
 } else {
-    $("#win-streak").text(`Wins Streak: ${localStorage.getItem("win-streak")}`)
+    $("#win-streak").text(`Win Streak: ${localStorage.getItem("win-streak")}`)
 }
 
 /** Display spinner */
