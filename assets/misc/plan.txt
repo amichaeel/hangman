@@ -1,13 +1,10 @@
-1. choose word from list
-2. chosen word will be split into an array
-3. div will be populated with underscores based on array length
-4. if a letter that a user inputs matches with a character in the array, replace specific index with matched character
-5. if guesses run out, display word and display loss and set timer of 5 seconds to restart game
-6. if user guesses word within the amount of guesses allowed, display victory and set timer of 5 seconds to restart game
-
-stats -
-keeps track of how many wins and losses a user has achieved.
-
 future plans
-user will be able to play against a friend and whoever guesses word first wins
-user will be able to choose a topic and a word will be suggested based on the topic
+
+game modes:
+ -- daily word: user will have 10 attempts to guess all letters in the daily word. a win streak will be recorded
+    -- to make sure user doesnt refresh to start over, each letter that was entered will be stored in local storage.
+    -- if a user refreshes, the script will check for all letters that have been entered.
+    -- letters that match the word will be highlighted green and disabled, and letters that arent apart of the word will be disabled.
+    -- guesses remaining will be stored in local storage.
+ -- rapid fire: user will have 1 minute to guess a word with only 10 total attempts. a win streak will be recorded
+ -- casual: a user will have unlimited time to guess a word with only 10 total attempts. a win streak will be recorded.

@@ -8,25 +8,40 @@ if (!localStorage.getItem("losses")) {
 $("#wins").text(`Wins: ${localStorage.getItem("wins")}`)
 $("#losses").text(`Losses: ${localStorage.getItem("losses")}`)
 
+const displayLoading = () => {
+    $("#spinner").removeClass("hide");
+    $("#spinner").addClass("display");
+}
+
+const hideLoading = () => {
+    $("#spinner").removeClass("display");
+    $("#spinner").addClass("hide");
+}
+
 
 /** Generate word and create word array */
-const words = ["javascript", "java", "python", "swift", "react", "programming"]
-let chosenWord = words[Math.floor(Math.random() * words.length)].split('');
-
-/** Underscore Logic */
+let word = "";
+let chosenWord = [];
 let underscores = [];
-for (const letter of chosenWord) {
-    underscores.push("_");
-}
-$("#underscore").text(underscores.join(" "));
+displayLoading();
+fetch('https://random-word-api.herokuapp.com/word')
+    .then((response) => response.json())
+    .then((data) => {
+        hideLoading();
+        word = data[0];
+        chosenWord = word.split("");
+
+        /** Underscore Logic */
+        underscores = [];
+        for (const letter of chosenWord) {
+            underscores.push("_");
+        }
+        $("#underscore").text(underscores.join(" "));
+    });
 
 /** Guess logic */
 let guessesLeft = 10;
 $('#guess').text(guessesLeft);
-
-$('#reset-stats').click(() => {
-    refreshStats();
-})
 
 /** Hangman game logic */
 $(".letters").click((event) => {
@@ -97,27 +112,33 @@ const newKeys = () => {
 const refresh = (won) => {
     guessesLeft = 10;
     $("#guess").text(guessesLeft);
-    chosenWord = words[Math.floor(Math.random() * words.length)].split('');
-    underscores = [];
-    for (const letter of chosenWord) {
-        underscores.push("_");
-    }
-    $("#underscore").text(underscores.join(" "));
+    displayLoading();
+    fetch('https://random-word-api.herokuapp.com/word')
+        .then((response) => response.json())
+        .then((data) => {
+            hideLoading();
+            word = data[0];
+            chosenWord = word.split("");
 
-    if (!won) {
-        $("#lose").text("");
-        $("#restart").text("");
-        $("#reveal").text("");
-        $("#guess").removeClass("low-guesses");
+            /** Underscore Logic */
+            underscores = [];
+            for (const letter of chosenWord) {
+                underscores.push("_");
+            }
+            $("#underscore").text(underscores.join(" "));
+            if (!won) {
+                $("#lose").text("");
+                $("#restart").text("");
+                $("#reveal").text("");
+                $("#guess").removeClass("low-guesses");
 
-    } else {
-        $("#win").text("");
-        $("#restart").text("");
-        $("#guess").removeClass("low-guesses");
-    }
-
-    newKeys();
-
+            } else {
+                $("#win").text("");
+                $("#restart").text("");
+                $("#guess").removeClass("low-guesses");
+            }
+            newKeys();
+        });
 }
 /** Stats logic */
 const updateStats = (won) => {
@@ -139,8 +160,14 @@ const refreshStats = () => {
     location.reload();
 }
 
-/** Manual refresh */
+/** Manual game refresh */
 $("#reset").click(() => {
     updateStats(false);
     refresh(false)
 });
+
+
+/** Refresh casual stats */
+$('#reset-stats').click(() => {
+    refreshStats();
+})

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hangman</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+          crossorigin="anonymous">
+    <!--Local CSS-->
+    <link rel='stylesheet' href='assets/css/styles.css'>
+    <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico'>
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+</head>
+<body>
+<div class="container-fluid header">
+    <div class="row">
+        <header class='col-12'>
+            <img class='title-img fade-in-rope' src='assets/img/headerimg.png'>
+        </header>
+    </div>
+</div>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class='col-12 fade-in'>
+            <h3 class='lead' id='title'>Press a letter to guess.</h3>
+            <h3 class='lead center'>Guesses remaining: <span id='guess'></span></h3>
+            <br>
+            <h3 id="invalid-letter" class="lead center"></h3>
+            <h3 id='win' class='fade-in center'></h3>
+            <br>
+            <h3 id='lose' class='fade-in center'></h3>
+            <br>
+            <h3 id='restart' class='center lead fade-in'></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h3 id='reveal' class='lead center'></h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class='col-12'>
+            <h1 id='underscore' class='fade-in'></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="letters" class="fade-in-letters col-6 center btn-group-sm">
+            <button type="button" id="letter1" class="letters btn btn-outline-dark">A</button>
+            <button type="button" id="letter2" class="letters btn btn-outline-dark">B</button>
+            <button type="button" id="letter3" class="letters btn btn-outline-dark">C</button>
+            <button type="button" id="letter4" class="letters btn btn-outline-dark">D</button>
+            <button type="button" id="letter5" class="letters btn btn-outline-dark">E</button>
+            <button type="button" id="letter6" class="letters btn btn-outline-dark">F</button>
+            <button type="button" id="letter7" class="letters btn btn-outline-dark">G</button>
+            <button type="button" id="letter8" class="letters btn btn-outline-dark">H</button>
+            <button type="button" id="letter9" class="letters btn btn-outline-dark">I</button>
+            <button type="button" id="letter10" class="letters btn btn-outline-dark">J</button>
+            <button type="button" id="letter11" class="letters btn btn-outline-dark">K</button>
+            <button type="button" id="letter12" class="letters btn btn-outline-dark">L</button>
+            <button type="button" id="letter13" class="letters btn btn-outline-dark">M</button>
+            <button type="button" id="letter14" class="letters btn btn-outline-dark">N</button>
+            <button type="button" id="letter15" class="letters btn btn-outline-dark">O</button>
+            <button type="button" id="letter16" class="letters btn btn-outline-dark">P</button>
+            <button type="button" id="letter17" class="letters btn btn-outline-dark">Q</button>
+            <button type="button" id="letter18" class="letters btn btn-outline-dark">R</button>
+            <button type="button" id="letter19" class="letters btn btn-outline-dark">S</button>
+            <button type="button" id="letter20" class="letters btn btn-outline-dark">T</button>
+            <button type="button" id="letter21" class="letters btn btn-outline-dark">U</button>
+            <button type="button" id="letter22" class="letters btn btn-outline-dark">V</button>
+            <button type="button" id="letter23" class="letters btn btn-outline-dark">W</button>
+            <button type="button" id="letter24" class="letters btn btn-outline-dark">X</button>
+            <button type="button" id="letter25" class="letters btn btn-outline-dark">Y</button>
+            <button type="button" id="letter26" class="letters btn btn-outline-dark">Z</button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class='col-12 center reset-buttons'>
+            <div type="button" id="reset" class="btn btn-outline-warning"><i class="fas fa-sync-alt"></i>  Reset Game</div>
+            <div type="button" id="reset-stats" class="btn btn-outline-danger"><i class="fas fa-sync-alt"></i>  Reset Stats</div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-12 center">
+            <h1 id="wins" class="lead"></h1>
+        </div>
+    </div>
+</div>
+
+
+<script src='assets/js/dailyword.js'></script>
+</body>
+</html>
