@@ -43,7 +43,9 @@ header {
 }
 
 .letters {
-    margin: 3px
+    margin: 3px;
+    width: 45px;
+    height: 35px;
 }
 
 
