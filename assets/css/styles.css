@@ -1,3 +1,25 @@
+@keyframes fadeIn-letters {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes fadeIn-rope {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -13,11 +35,22 @@ body {
 
 header {
     text-align: center;
+}
 
+.reset-buttons {
+    animation: fadeIn 4s;
 }
 
 .fade-in {
-    animation: fadeIn 2s;
+    animation: fadeIn 0.8s;
+}
+
+.fade-in-letters {
+    animation: fadeIn-letters 2s;
+}
+
+.fade-in-rope {
+    animation: fadeIn-rope 1s;
 }
 
 .title-img {
