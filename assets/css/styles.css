@@ -1,0 +1,69 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    background-color: rgb(243, 243, 243);
+}
+
+header {
+    text-align: center;
+
+}
+
+.fade-in {
+    animation: fadeIn 2s;
+}
+
+.title-img {
+    height: 300px;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.thebutton {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.header {
+    transition: width 2s;
+}
+
+.low-guesses {
+    color: darkred;
+}
+
+#title {
+    text-align: center;
+}
+
+#underscore {
+    padding: 50px;
+    text-align: center;
+}
+
+#win {
+    color: green;
+    opacity: 100;
+    -webkit-transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+    transition: opacity .5s ease-out;
+}
+
+#lose {
+    color: red;
+}
+
+#invalid-letter {
+    color: darkred;
+}

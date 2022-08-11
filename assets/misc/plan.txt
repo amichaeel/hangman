@@ -1,0 +1,13 @@
+1. choose word from list
+2. chosen word will be split into an array
+3. div will be populated with underscores based on array length
+4. if a letter that a user inputs matches with a character in the array, replace specific index with matched character
+5. if guesses run out, display word and display loss and set timer of 5 seconds to restart game
+6. if user guesses word within the amount of guesses allowed, display victory and set timer of 5 seconds to restart game
+
+stats -
+keeps track of how many wins and losses a user has achieved.
+
+future plans
+user will be able to play against a friend and whoever guesses word first wins
+user will be able to choose a topic and a word will be suggested based on the topic
