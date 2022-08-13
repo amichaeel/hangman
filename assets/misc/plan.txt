@@ -1,6 +1,5 @@
 future plans
 todo:
-impliment state logic to prevent skipping a word
 begin rapid fire page
 
 game modes:

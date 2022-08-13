@@ -157,6 +157,7 @@ $(".letters").click((event) => {
 
     /** Lose logic */
     if (guessesLeft == 0) {
+        won = false;
         localStorage.removeItem("guesses");
         $("#play-again-btn").show();
         localStorage.removeItem("casual-word");
